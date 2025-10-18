@@ -151,81 +151,28 @@ python -m pytest
 
 ## Deployment
 
-### Using Portainer (Recommended)
-
-This FlaskKit framework is optimized for deployment via Portainer using Docker Stacks.
-
-#### Prerequisites
-- Portainer installed and running
-- Docker Swarm mode enabled (for stacks)
-- Git repository access
-
-#### Deployment Steps
-
-1. **Prepare your repository:**
-   - Ensure all files are committed to your Git repository
-   - Note your repository URL
-
-2. **Deploy via Portainer:**
-   - Log into your Portainer instance
-   - Navigate to **Stacks** → **Add stack**
-   - Choose **Repository** as the build method
-   - Enter your repository URL
-   - Set the reference to `main` (or your preferred branch)
-   - Set the compose path to `/docker-compose.yml`
-
-3. **Configure Environment Variables:**
-   - In the **Environment variables** section, add:
-     ```
-     SECRET_KEY=your-super-secret-key-change-this-in-production
-     DB_PASSWORD=your-secure-database-password
-     ```
-   - Optionally add email configuration:
-     ```
-     MAIL_SERVER=smtp.gmail.com
-     MAIL_PORT=587
-     MAIL_USE_TLS=true
-     MAIL_USERNAME=your-email@gmail.com
-     MAIL_PASSWORD=your-app-password
-     ```
-
-4. **Deploy:**
-   - Click **Deploy the stack**
-   - Monitor the deployment in the logs
-
-#### Accessing Your Application
-
-- **Direct access:** `http://your-server-ip:5000`
-- **Via Nginx:** `http://your-server-ip` (if nginx service is enabled)
-- **Health check:** `http://your-server-ip:5000/api/health`
-
-#### Services Included
-
-- **web:** Flask application (port 5000)
-- **db:** PostgreSQL database (port 5432)
-- **redis:** Redis cache (port 6379)
-- **nginx:** Reverse proxy (ports 80, 443) - optional
-
-### Using Docker Compose Locally
-
-```bash
-# Clone the repository
-git clone <your-repo-url>
-cd flaskkit
-
-# Set environment variables
-export SECRET_KEY=your-secret-key
-export DB_PASSWORD=your-db-password
-
-# Deploy
-docker-compose up -d
-```
-
-### Using Gunicorn (Direct)
+### Using Gunicorn
 
 ```bash
 pip install gunicorn
 gunicorn -w 4 -b 0.0.0.0:8000 app:app
+```
+
+### Using Docker
+
+Create a `Dockerfile`:
+
+```dockerfile
+FROM python:3.9-slim
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY . .
+EXPOSE 5000
+
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "app:app"]
 ```
 
 ## Contributing
