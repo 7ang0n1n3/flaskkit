@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} - FlaskKit{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <h1 class="mb-4">{{ title }}</h1>
+        
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">About FlaskKit</h5>
+                <p class="card-text">
+                    FlaskKit is a basic Flask framework designed to help you get started quickly with web development. 
+                    It includes all the essential components you need to build a modern web application.
+                </p>
+                
+                <h6 class="mt-4">Features:</h6>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Flask application with factory pattern</li>
+                    <li class="list-group-item">Bootstrap 5 integration for responsive design</li>
+                    <li class="list-group-item">Template inheritance with Jinja2</li>
+                    <li class="list-group-item">Form handling with validation</li>
+                    <li class="list-group-item">Flash messaging system</li>
+                    <li class="list-group-item">Error handling (404, 500)</li>
+                    <li class="list-group-item">API endpoints</li>
+                    <li class="list-group-item">Static file serving</li>
+                </ul>
+                
+                <h6 class="mt-4">Getting Started:</h6>
+                <ol>
+                    <li>Install dependencies: <code>pip install -r requirements.txt</code></li>
+                    <li>Run the application: <code>python app.py</code></li>
+                    <li>Open your browser to <code>http://localhost:5000</code></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

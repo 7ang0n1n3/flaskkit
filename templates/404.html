@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} - FlaskKit{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-6 mx-auto text-center">
+        <div class="error-template">
+            <h1 class="display-1">404</h1>
+            <h2>Page Not Found</h2>
+            <div class="error-details">
+                Sorry, the page you are looking for does not exist.
+            </div>
+            <div class="error-actions mt-4">
+                <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg">
+                    <i class="fas fa-home"></i> Take Me Home
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

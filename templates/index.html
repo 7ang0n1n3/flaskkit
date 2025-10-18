@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} - FlaskKit{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <div class="jumbotron bg-primary text-white p-5 rounded mb-4">
+            <h1 class="display-4">Welcome to FlaskKit</h1>
+            <p class="lead">A basic Flask framework to get you started quickly.</p>
+            <hr class="my-4">
+            <p>This is a starter template with Bootstrap styling, basic routing, and form handling.</p>
+            <a class="btn btn-light btn-lg" href="{{ url_for('about') }}" role="button">Learn More</a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Easy Setup</h5>
+                <p class="card-text">Quick installation with pip and you're ready to go. No complex configuration needed.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Modern UI</h5>
+                <p class="card-text">Built with Bootstrap 5 for responsive design and modern styling out of the box.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Extensible</h5>
+                <p class="card-text">Clean architecture with blueprints support for easy scaling and organization.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

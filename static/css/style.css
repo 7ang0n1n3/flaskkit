@@ -1,0 +1,148 @@
+/* Custom styles for FlaskKit */
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navigation */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Jumbotron */
+.jumbotron {
+    background: linear-gradient(135deg, var(--primary-color), #0056b3);
+    border-radius: 0.5rem;
+}
+
+/* Cards */
+.card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transition: box-shadow 0.15s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Forms */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Buttons */
+.btn {
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: all 0.15s ease-in-out;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+/* Alerts */
+.alert {
+    border: none;
+    border-radius: 0.5rem;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+}
+
+/* Error pages */
+.error-template {
+    padding: 2rem 0;
+}
+
+.error-template h1 {
+    color: var(--primary-color);
+    font-size: 6rem;
+    font-weight: bold;
+}
+
+.error-template h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .jumbotron {
+        padding: 2rem 1rem;
+    }
+    
+    .jumbotron h1 {
+        font-size: 2.5rem;
+    }
+    
+    .error-template h1 {
+        font-size: 4rem;
+    }
+}
+
+/* Loading animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Utility classes */
+.text-shadow {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(135deg, var(--primary-color), #0056b3);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0056b3;
+}
